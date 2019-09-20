@@ -44,7 +44,6 @@ public class patients_recep extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         Back = new javax.swing.JButton();
         ppno_tf = new javax.swing.JTextField();
-        pdisorder_tf = new javax.swing.JTextField();
         pname_tf = new javax.swing.JTextField();
         p_type_tf = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
@@ -53,6 +52,7 @@ public class patients_recep extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         pid_tf = new javax.swing.JLabel();
         doc_btn = new javax.swing.JButton();
+        pdisorder_tf = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -85,8 +85,6 @@ public class patients_recep extends javax.swing.JFrame {
         Back.setBounds(340, 360, 100, 31);
         jPanel1.add(ppno_tf);
         ppno_tf.setBounds(310, 170, 240, 29);
-        jPanel1.add(pdisorder_tf);
-        pdisorder_tf.setBounds(310, 210, 240, 29);
         jPanel1.add(pname_tf);
         pname_tf.setBounds(310, 130, 240, 29);
 
@@ -126,6 +124,10 @@ public class patients_recep extends javax.swing.JFrame {
         jPanel1.add(doc_btn);
         doc_btn.setBounds(470, 360, 110, 31);
 
+        pdisorder_tf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Neuro", "Gastro", "Artho", "Cardio", "General", "Dental" }));
+        jPanel1.add(pdisorder_tf);
+        pdisorder_tf.setBounds(310, 210, 240, 29);
+
         jLabel1.setIcon(new javax.swing.ImageIcon("/home/ezhilnero/Pictures/netbeans/back6.png")); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 770, 450);
@@ -152,7 +154,7 @@ public class patients_recep extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String pname =pname_tf.getText().toLowerCase().toString();
         String ppno =ppno_tf.getText().toLowerCase().toString();
-        pdisorder =pdisorder_tf.getText().toLowerCase().toString();
+        pdisorder =pdisorder_tf.getSelectedItem().toString().toLowerCase();
         String pgender =p_gender_tf.getSelectedItem().toString().toLowerCase();
         String ptype =p_type_tf.getSelectedItem().toString().toLowerCase();      
        
@@ -243,7 +245,7 @@ public class patients_recep extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> p_gender_tf;
     private javax.swing.JComboBox<String> p_type_tf;
-    private javax.swing.JTextField pdisorder_tf;
+    private javax.swing.JComboBox<String> pdisorder_tf;
     private javax.swing.JLabel pid_tf;
     private javax.swing.JTextField pname_tf;
     private javax.swing.JTextField ppno_tf;

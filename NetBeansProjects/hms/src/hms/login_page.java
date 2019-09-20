@@ -151,7 +151,7 @@ public class login_page extends javax.swing.JFrame {
             else if(loginid.getText().contains("sysadm"))
             {
                 super.dispose();
-               new sys_admin().setVisible(true);
+               new sys_adm_opt().setVisible(true);
             }
             else
             {
